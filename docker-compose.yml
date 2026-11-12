@@ -1,0 +1,13 @@
+services:
+  avtarapp:
+    container_name: avtarapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4030:3000"
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
