@@ -1,35 +1,35 @@
 "use client";
 
 import { useState } from "react";
-// import { useHeyGenAvatar } from "@/hook/useHeyGenAvatar";
 import HeyGenVideo from "@/components/HeyGenVideo";
+import { useHeyGenAvatar } from "@/hook/useHeyGenAvatar";
 
 export default function AvatarPOC() {
   // Pass manualReply: true so voice transcriptions automatically trigger session.message()
-  // const {
-  //   videoRef,
-  //   isReady,
-  //   isLoading,
-  //   isMuted,
-  //   lines,
-  //   startSession,
-  //   stopSession,
-  //   sendText,
-  //   toggleMic,
-  // } = useHeyGenAvatar({ manualReply: true });
+  const {
+    videoRef,
+    isReady,
+    isLoading,
+    isMuted,
+    lines,
+    startSession,
+    stopSession,
+    sendText,
+    toggleMic,
+  } = useHeyGenAvatar({ manualReply: true });
 
   const [text, setText] = useState("");
 
-  // const handleSend = () => {
-  //   if (text.trim()) {
-  //     sendText(text);
-  //     setText("");
-  //   }
-  // };
+  const handleSend = () => {
+    if (text.trim()) {
+      sendText(text);
+      setText("");
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-4 font-sans">
-      {/* <div className="w-full max-w-3xl flex flex-col gap-4">
+      <div className="w-full max-w-3xl flex flex-col gap-4">
 
         <div className="flex justify-between items-center bg-gray-800 p-4 rounded-lg">
           <h1 className="text-white font-semibold">HeyGen Avatar POC</h1>
@@ -106,8 +106,8 @@ export default function AvatarPOC() {
           </div>
         )}
 
-      </div> */}
-      <HeyGenVideo />
+      </div>
+      {/* <HeyGenVideo /> */}
     </div>
   );
 }

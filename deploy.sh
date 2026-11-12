@@ -15,4 +15,4 @@ docker compose up --build -d
 echo "Cleaning up old unused, dangling images to save disk space..."
 docker image prune -f
 
-echo "Deployment successful! Avtarapp is live on port 4030."
+echo "Deployment successful! Avtarapp is live on port 4029."
